@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    -webkit-tap-highlight-color: transparent;
+  background: #000;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Fundo animado */
+.background {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 0, 0, 0.466), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255, 0, 0, 0.388), transparent 40%);
+  filter: blur(80px);
+  animation: move 10s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes move {
+  from { transform: translateY(-20px); }
+  to { transform: translateY(20px); }
+}
+
+/* Card */
+.card {
+  width: 100%;
+  max-width: 390px;
+  background: #1c1c1c;
+  border-radius: 28px;
+  padding: 30px 24px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+}
+
+/* Foto */
+.profile {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.profile img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 4px solid #ffb700;
+  box-shadow: 0 0 20px rgba(255, 208, 0, 0.8);
+}
+
+
+/* Textos */
+h1 {
+  color: #fff;
+  font-weight: 700;
+}
+
+h2 {
+  color: #ff0033;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin: 6px 0 14px;
+}
+
+.description {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* Links */
+.links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.link {
+  background: #2a2a2a;
+  border-radius: 18px;
+  padding: 18px 10px;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+  
+}
+
+.link i {
+  font-size: 26px;
+}
+
+/* Hover */
+.facebook:hover {
+  background: #1877f2;
+  color: #ccc;
+}
+
+.instagram:hover {
+  background: #e1306c;
+  color: #ccc;
+}
+
+.website:hover {
+  background: #ff0033;
+  color: #ccc;
+}
+
+.whatsapp:hover {
+  background: #25d366;
+  color: #ccc;
+}
+
+/* Rodapé */
+footer {
+  margin-top: 26px;
+  font-size: 13px;
+  color: #ccc;
+}
+
+footer span {
+  display: block;
+  margin-bottom: 6px;
+}
+
+footer a {
+  color: #ff0033;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/* Celulares pequenos (até 360px) */
+@media (max-width: 360px) {
+  .card {
+    padding: 24px 18px;
+    border-radius: 22px;
+  }
+
+  .profile img {
+    width: 90px;
+    height: 90px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .link {
+    padding: 14px 8px;
+  }
+
+  .link i {
+    font-size: 22px;
+  }
+}
+
+/* Celulares médios e grandes */
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+}
+
+/* Tablets */
+@media (min-width: 600px) {
+  .card {
+    max-width: 420px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .profile img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .card {
+    max-width: 400px;
+  }
+
+  .background {
+    filter: blur(120px);
+  }
+}
